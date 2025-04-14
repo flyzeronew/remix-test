@@ -19,7 +19,7 @@ export default function About() {
       <p>這是一個用 Remix 建立的基本首頁。</p>
 
       <section style={{ marginTop: "2rem" }}>
-        <h2>🔗其他頁面{appUrl}</h2>
+        <h2>🔗其他頁面</h2>
         <ul>
           <li>
             <Link to="/about">關於我們</Link>
