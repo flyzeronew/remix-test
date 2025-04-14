@@ -42,7 +42,8 @@ export default function About() {
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const menuRes = await fetch("https://api.esg.tvbs-staging.app/api/menu");
+  const menuUrl = new URL('/api/menu', process.env.VITE_API_URL)
+  const menuRes = await fetch(menuUrl);
   const menu = await menuRes.json();
   return json({
     menu: menu,
