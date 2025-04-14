@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { json, LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
@@ -12,7 +12,11 @@ export const meta: MetaFunction = () => {
 
 
 export default function About() {
-  const appUrl = useLoaderData<typeof loader>().appUrl;
+
+  const allData = useLoaderData<typeof loader>();
+  const appUrl = allData.appUrl;
+  
+  //return <pre>{JSON.stringify(allData, null, 2)}</pre>;
   return (
     <main style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
       <h1>👋 歡迎來到我的 Remix 網站</h1>
@@ -37,9 +41,12 @@ export default function About() {
   );
 }
 
-export function loader() {
+export async function loader({ request }: LoaderFunctionArgs) {
+  const menuRes = await fetch("https://api.esg.tvbs-staging.app/api/menu");
+  const menu = await menuRes.json();
   return json({
-      appUrl: process.env.VITE_APP_URL,
-
+    menu: menu,
+    appUrl: process.env.VITE_APP_URL,
   });
 }
+
