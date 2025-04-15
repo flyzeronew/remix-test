@@ -8,21 +8,18 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 import GTM from './components/gtm';
 
-import "./tailwind.css";
+// import "./tailwind.css";
+import "./styles/globals.scss";
 
 export const links: LinksFunction = () => [
-  { rel: "preconnect", 
-    href: "https://fonts.googleapis.com" 
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap',
   },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap',
+  }, 
 ];
 
 
