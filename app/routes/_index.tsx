@@ -23,7 +23,7 @@ export default function About() {
   return (
     <>
       <Header menu={menu} />
-      {/* <main className={styles.homePage}>
+      <main className={styles.homePage}>
         <div className='frameBox'>
           <article>
               主欄
@@ -32,7 +32,7 @@ export default function About() {
               右欄
           </aside>
         </div>
-      </main> */}
+      </main>
       <Footer />
     </>
   );
