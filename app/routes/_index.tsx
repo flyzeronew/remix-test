@@ -4,7 +4,7 @@ import { json, LoaderFunctionArgs } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import styles from '../styles/index.module.scss'
+// import styles from '../styles/index.module.scss'
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,7 +23,7 @@ export default function About() {
   return (
     <>
       <Header menu={menu} />
-      <main className={styles.homePage}>
+      {/* <main className={styles.homePage}>
         <div className='frameBox'>
           <article>
               主欄
@@ -32,7 +32,7 @@ export default function About() {
               右欄
           </aside>
         </div>
-      </main>
+      </main> */}
       <Footer />
     </>
   );
